@@ -1,0 +1,15 @@
+ul{
+    list-style-type:none;
+}
+.done{
+    background-color: green !important;
+}
+.high{
+    background-color: red;
+  }
+.med{
+    background-color: rgb(235, 111, 111);
+  }
+.low{
+    background-color: rgb(247, 191, 191);
+}

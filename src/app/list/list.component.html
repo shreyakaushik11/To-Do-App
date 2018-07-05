@@ -1,0 +1,20 @@
+<div class="border"><h1 class="text-info text-center">To-Do List</h1><div>
+<p class="text-center"><input type="text" [(ngModel)]="task.name">
+<select name="" id="" [(ngModel)]="task.pr" class="btn-primary">
+  <option value="H">High</option>
+  <option value="M">Medium</option>
+  <option value="L">Low</option>
+</select>
+<button class="btn btn-primary" (click)="addTask()">Add</button>
+</p>
+<h3 class="text-info text-center">Task: {{pending()}}/{{tasks.length}}</h3>
+<ul>
+  
+  <li [ngClass]="{'done':t.status, 'high':t.priority=='H', 'med':t.priority=='M', 'low':t.priority=='L'}" *ngFor="let t of tasks; let i=index" class="animated bounceInDown">{{t.name}}
+    
+    <button class="btn btn-danger" (click)="removeTask(i)">X</button>
+    <button class="btn btn-primary" (click)="editTask(i)">Edit</button>
+    <button class="btn btn-primary" (click)="updateTask(i)">Update</button>
+    <button class="btn btn-primary" (click)="changeStatus(i)">Done</button>
+    <span>{{createdAt()}}</span>
+</ul>
